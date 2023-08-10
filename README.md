@@ -14,3 +14,6 @@ This are the items that are needed in the .env file
 - PORT : This is wating for the port 
 
 
+Comandos para el generar la base de datos en PRISMA:
+- npx prisma generate
+- npx prisma db push

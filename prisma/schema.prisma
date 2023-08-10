@@ -9,5 +9,12 @@ datasource db {
 
 model User {
     id             String  @id @default(uuid())
+    username       String  @unique
+    email          String  @unique
+    password       String
+    name           String?
+    last_name      String?
+    phone          String?
+    image          String? @default("https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg")
 }
 
