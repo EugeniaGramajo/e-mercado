@@ -21,7 +21,7 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
 	try {
 
 		const decodedToken = jwt.verify(token, secretKey)
-
+		
 		const user = prisma.user.findUnique({
 			where: {
 				id: (decodedToken as DecodedToken).id
@@ -33,6 +33,6 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
 
 		next()
 	} catch (err) {
-		return res.status(401).json({ error: 'Token de autenticación inválido' })
+		return res.status(401).json({ err,error: 'Token de autenticación inválido' })
 	}
 }
